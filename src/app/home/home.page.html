@@ -1,14 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Location App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    Enable your location to start
+<br/>
+<hr/>
+<br/>
+    <ion-button color="primary" (click)="getLocation()">Get Location</ion-button>
+    <div *ngIf="location">
+      <p><b>Latitude: </b>{{location?.coords?.latitude}}</p>
+      <p><b>Longitude: </b>{{location?.coords?.longitude}}</p>
+      <p><b>Altitude: </b>{{location?.coords?.altitude}}</p>
+    </div>
+    <hr/>
+
+    <ion-button color="secondary" (click)="getGeoCoder()">Get GeoCoder</ion-button>
+    <div *ngIf="geoCoder">
+      <p><b>País: </b>{{geoCoder?.countryName}}</p>
+      <p><b>Cidade: </b>{{geoCoder?.locality}}</p>
+      <p><b>Thoroughfare: </b>{{geoCoder?.thoroughfare}}</p>
+      <p><b>AdministrativeArea: </b>{{geoCoder?.administrativeArea}}</p>
+      <p><b>GeoCode: </b>{{geoCoder?.postalCode}}</p>
+    </div>
   </div>
 </ion-content>

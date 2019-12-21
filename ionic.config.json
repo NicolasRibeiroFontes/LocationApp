@@ -1,5 +1,7 @@
 {
   "name": "LocationApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
